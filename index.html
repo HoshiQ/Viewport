@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Final Layout - Corrected 2x2 Footer</title>
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #F4F4F4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh; 
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1000px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            margin: 20px 0;
+            
+            display: flex;
+            flex-direction: column;
+            height: 85vh; 
+        }
+
+        .block {
+            padding: 15px;
+            margin-bottom: 10px;
+            text-align: center;
+            color: #fff;
+            border-radius: 4px;
+            box-sizing: border-box; 
+        }
+        
+        .header-block {
+            background-color: #8BC34A; 
+            height: 20%; 
+        }
+
+        .main-content-block {
+            background-color: #00BCD4;
+            flex-grow: 1; 
+        }
+
+        .footer-block {
+            background-color: #CFD8DC;
+            color: #333;
+            min-height: 100px; 
+            margin-bottom: 10px; 
+        }
+
+        .footer-rows > .footer-row:last-child .footer-block:last-child {
+            margin-bottom: 0;
+        }
+
+        .main-layout {
+            display: flex;
+            flex-direction: column; 
+            flex-grow: 1; 
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
+
+        .footer-rows {
+            display: flex;
+            flex-direction: column; 
+        }
+        
+        .footer-row {
+            display: flex;
+            flex-direction: row; 
+            margin-bottom: 10px;
+        }
+
+        .footer-row .footer-block {
+            width: calc(50% - 5px); 
+            margin-bottom: 0; 
+        }
+
+        .footer-row .footer-block:first-child {
+            margin-right: 10px; 
+        }
+        
+        .footer-rows > .footer-row:last-child {
+            margin-bottom: 0;
+        }
+
+
+        @media (min-width: 720px) {
+
+            .main-layout {
+                flex-direction: row; 
+            }
+
+            .main-content-block {
+                width: calc(33.333% - 6.666px); 
+                margin-right: 10px; 
+            }
+
+            .main-content-block:nth-child(3) {
+                margin-right: 0;
+            }
+
+            #hidden-on-large {
+                display: none;
+            }
+            
+            
+            .footer-rows {
+                flex-direction: row; 
+            }
+
+            .footer-row {
+                flex-direction: row; 
+                width: 100%; 
+                margin-bottom: 0; 
+            }
+
+            .footer-row .footer-block {
+                width: 100%; 
+                margin-right: 10px; 
+            }
+
+            .footer-row:last-child .footer-block:last-child {
+                 margin-right: 0; 
+            }
+            
+            .footer-row:first-child .footer-block:last-child {
+                 margin-right: 10px; 
+            }
+        }
+
+        @media (max-width: 719px) {
+            .main-content-block {
+                width: 100%; 
+                margin-right: 0;
+            }
+            
+            #hidden-on-large {
+                display: block; 
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="header-block block"></div>
+
+        <div class="main-layout">
+            <div class="main-content-block block"></div>
+            <div class="main-content-block block"></div>
+            <div class="main-content-block block"></div>
+        </div>
+        
+        <div class="footer-rows">
+            <div class="footer-row">
+                <div class="footer-block block"></div>
+                <div class="footer-block block"></div>
+            </div>
+            
+            <div class="footer-row">
+                <div class="footer-block block"></div>
+                <div class="footer-block block"></div>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>
